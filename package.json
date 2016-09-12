@@ -1,0 +1,25 @@
+{
+  "name": "robot",
+  "version": "1.0.0",
+  "description": "一个用来查找商品过往优惠价格的小程序",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^0.20.0"
+    "iconv-lite": "^0.4.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossroma/robot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rossroma/robot/issues"
+  },
+  "homepage": "https://github.com/rossroma/robot#readme"
+}
