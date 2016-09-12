@@ -4,7 +4,7 @@
   "description": "一个用来查找商品过往优惠价格的小程序",
   "main": "index.js",
   "dependencies": {
-    "cheerio": "^0.20.0"
+    "cheerio": "^0.20.0",
     "iconv-lite": "^0.4.13"
   },
   "devDependencies": {},
