@@ -6,13 +6,10 @@ var fs = require("fs"),
 		origin = require('./data/origin-1'),
 		stream = require('./stream');
 var id = 0;
-while(origin.arr.length) {
-	var keyword = origin.arr.shift();	
-	var keyword2 = encodeURI(keyword);
-	var path = "http://www.gwdang.com/search?crc64=1&s_product=" + keyword2;
-	httpGet(path, keyword, id);
-	id++;
-}
+var keyword = origin.arr.shift();	
+var keyword2 = encodeURI(keyword);
+var path = "http://www.gwdang.com/search?crc64=1&s_product=" + keyword2;
+httpGet(path, keyword, id);
 
 function httpGet(path, keyword, id) {
 	var html = [];
@@ -56,6 +53,14 @@ function httpGet(path, keyword, id) {
 			}else{
 				var xmlData = '未检索到信息！';
 			}
+
+			if(origin.arr.length) {
+				keyword = origin.arr.shift();	
+				keyword2 = encodeURI(keyword);
+				path = "http://www.gwdang.com/search?crc64=1&s_product=" + keyword2;
+				id++;
+				httpGet(path, keyword, id);			
+			}	
 
 		})
 	}).on('error', function(error) {

@@ -19,7 +19,7 @@ var fs = require('fs');
 
 var index = 0;
 function writeStream(html) {
-	fs.appendFile(__dirname + '/data/goods-1.xml', html, function () {
+	fs.appendFile(__dirname + '/data/goods-2.xml', html, function () {
 	  console.log('成功添加--' + index);
 	  index++;
 	});
