@@ -17,14 +17,12 @@
  */
 var fs = require('fs');
 
+var index = 0;
+function writeStream(html) {
+	fs.appendFile(__dirname + '/data/goods-1.xml', html, function () {
+	  console.log('成功添加--' + index);
+	  index++;
+	});
+}
 
-// var ws = fs.createWriteStream(__dirname + '/test/test.txt');
-// for (var i = 0; i < 100; i++) {
-//   var w_flag = ws.write(i.toString() + ",");
-//   //当缓存区写满时，输出false
-//   console.log(w_flag);
-// }
-
-fs.appendFile(__dirname + '/test.txt', '使用fs.appendFile追加文件内容', function () {
-  console.log('追加内容完成');
-});
+exports.writeStream = writeStream;

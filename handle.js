@@ -2,7 +2,8 @@ var fs = require("fs"),
 		querystring = require("querystring"),
 		cheerio = require("cheerio"),
 		iconv = require("iconv-lite"),
-		http = require('http');
+		http = require('http'),
+		stream = require('./stream');
 
 function handle(response, postData){
 	//判断是否有数据提交
@@ -66,6 +67,10 @@ function handle(response, postData){
 					for(var i=0; i<itemhtml.length; i++){
 						formData += '<tr><td><img src='+itemhtml[i].img+'></td><td><a target="_blank" href="'+itemhtml[i].href+'">'+itemhtml[i].title+'</a></td><td>'+itemhtml[i].jdPrice+'</td><td>'+itemhtml[i].onePrice+'</td><td>'+itemhtml[i].tmPrice+'</td><td></td></tr>';
 					}
+
+					// 将第一个数据写入的文件
+					// var xmlData = '<GOOD><TITLE>'+itemhtml[0].title+'</TITLE><JDPRICE>'+itemhtml[0].jdPrice+'</JDPRICE><ONEPRICE>'+itemhtml[0].onePrice+'</ONEPRICE><TMPRICE>'+itemhtml[0].tmPrice+'</TMPRICE><OTHER></OTHER><IMG>'+itemhtml[0].img+'</IMG></GOOD>';
+					// stream.writeStream(xmlData);
 
 					//将生成的html写入到页面
 					fs.readFile("./index.html",function(err, data) {
