@@ -1,23 +1,22 @@
 # priceSearch
-价格查询
+网页爬虫，爬取购物党网站上的价格信息。
 
 #使用介绍
 本程序依赖于NodeJS，使用前请务必安装好NodeJS；  
 
 #文档介绍
-### index.js
-默认执行文件，主要作用是建立一个http服务。
+### robot.js
+所有的功能函数都集中在这个文件中,包括爬取网页，获取结果，读取并输出为xml代码。
 
-### handle.js
-所有的功能函数都集中在这个文件中，包括读取html内容，获取搜索结果，输出搜索结果。
+### stream.js
+将xml代码写入到data/***.xml 中。
 
-### index.html
-这是一个完整的html静态页面，里面的内容可以被读取并输出到前端。
+### data/origin-1.js
+数据源，包含了一个关键词数组。
 
 #start
 
 `npm install`   
 
-`node index.js`
+`node robot.js`
 
-打开浏览器，访问 http://127.0.0.1:8888
